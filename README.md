@@ -9,6 +9,19 @@ Uma atráves do CLI(linha de comando) outra Gráfica(tkinter).
 
 Primeiro tens de criar um ambiente virtual na pasta **_estegano_**. Podes conferir este link [https://virtualenv.pypa.io/en/latest/installation.html#via-pip](virtualenv)
 
+`$ virtualenv venv`
+
+### Ativar o ambiente virtual
+Para linux
+
+`$ . venv/bin/activate`
+
+Para windows
+
+`$ source Scripts/activate`
+
+Para desativar usa `deactivate`.
+
 Depois de instalar o ambiente virtual, execute o comando abaixo.
 
 `$ pip install -r requirements.txt`

@@ -67,8 +67,8 @@ def encode(nome_imagem, mensagem):
 def decode(encode_imagem):
 	image = cv2.imread(encode_imagem)
 	mensagem_codificada = ""
-	for row2 in image:
-		for pixel in row2:
+	for row in image:
+		for pixel in row:
 			r, g, b = to_bin(pixel)
 			mensagem_codificada += r[-1]
 			mensagem_codificada += g[-1]

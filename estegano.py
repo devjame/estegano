@@ -28,6 +28,22 @@ def to_bin(data):
 		raise TypeError("Type not supported.")
 
 
+def ler_ficheiro(ficheiro):
+	"""Ler ficheiro do tipo txt."""
+	with open(ficheiro) as texto:
+		return texto.read()
+
+
+def gravar_texto(novo_ficheiro, texto):
+	"""Guardar texto num ficheiro dot tipo txt.
+	:param
+		novo_ficheiro: nome do ficheiro a guardar o texto
+		texto: o texto a ser guardado no ficheiro
+	:return: None
+	"""
+	with open(novo_ficheiro, 'w') as ficheio:
+		ficheio.write(texto)
+
 msg = "ola mundo"
 
 loc_img = 'data/img.jpg'
@@ -106,7 +122,8 @@ def menu():
 	if opcao == 1:
 		print("[*] Codificar mensagem...\n")
 		imagem = input("Imagem para guardar a mensagem [png/jpg]: ")
-		mensagem = input("Mensagem para enconder na mensagem: ")
+		# mensagem = input("Mensagem para enconder na mensagem: ")
+		mensagem = ler_ficheiro('data/auto-da-barca-2.txt')
 		output_imagem = input("Nome da nova imagem a ser salvo [png/jpg]: ") or 'encoded_imagem.png'
 		encoded_imgem = encode(imagem, mensagem)
 		cv2.imwrite(output_imagem, encoded_imgem)
@@ -116,6 +133,7 @@ def menu():
 		print("[*] Descodificar mensagem...\n")
 		imagem = input("Imagem para retirar a mensagem codificada [png/jpg]: ")
 		decoded_mensagem = decode(imagem)
+		gravar_texto('data/mensagem-descodificada.txt', decoded_mensagem)
 		print("\n[*] Mensagem codificada:", decoded_mensagem)
 	else:
 		print("Obrigado pela visita. Vejo-te mais logo. ;)")

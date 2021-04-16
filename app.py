@@ -13,7 +13,7 @@ class App(tk.Tk):
 		super().__init__()
 
 		# root window
-		self.title('Esteganográfia')
+		self.title('Esteganografia')
 		self.resizable(False, False)
 		self.geometry('580x310')
 		self.style = ttk.Style(self)
@@ -45,7 +45,7 @@ class App(tk.Tk):
 			variable=self.selected_value,
 			command=self.change_frame)
 
-		self.btn_file = ttk.Button(text="Load File", command=self.load_file)
+		self.btn_file = ttk.Button(text="Escolher Imagem", command=self.load_file)
 		self.lbl_img = ttk.Label(self.fr_img)
 
 		self.txt_mensagem = tk.Text(self.fr_content, height=10, width=25)

@@ -30,12 +30,14 @@ def to_bin(data):
 
 def ler_ficheiro(ficheiro):
 	"""Ler ficheiro do tipo txt."""
+
 	with open(ficheiro) as texto:
 		return texto.read()
 
 
 def gravar_texto(novo_ficheiro, texto):
-	"""Guardar texto num ficheiro dot tipo txt.
+	"""Guardar texto num ficheiro do tipo txt.
+
 	:param
 		novo_ficheiro: nome do ficheiro a guardar o texto
 		texto: o texto a ser guardado no ficheiro
@@ -44,12 +46,15 @@ def gravar_texto(novo_ficheiro, texto):
 	with open(novo_ficheiro, 'w') as ficheio:
 		ficheio.write(texto)
 
-msg = "ola mundo"
-
-loc_img = 'data/img.jpg'
-
 
 def encode(nome_imagem, mensagem):
+	"""
+	Pega numa mensagem e numa imagem e esconde a mensagem dentro dela.
+
+	:param nome_imagem: imagem que é usada para esconder a mensagem
+	:param mensagem: mensagem a ser enscondida na imagem
+	:return: uma nova imagem com a mensagem escondida
+	"""
 	imagem = cv2.imread(nome_imagem)
 	mensagem += '====='
 	msg_bin = to_bin(mensagem)
@@ -81,6 +86,11 @@ def encode(nome_imagem, mensagem):
 
 
 def decode(encode_imagem):
+	"""
+	Pega num imagem com a mensagem escondida e retira a menasgem escondida.
+	:param encode_imagem: imagem com a mensagem escondida
+	:return: (string) menagem descodificada
+	"""
 	image = cv2.imread(encode_imagem)
 	mensagem_codificada = ""
 	for row in image:

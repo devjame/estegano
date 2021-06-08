@@ -4,3 +4,5 @@ __pycache__
 .git
 .idea
 estegano/utils.py
+dist/
+estegano.egg-info/

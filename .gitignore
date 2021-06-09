@@ -6,3 +6,4 @@ __pycache__
 estegano/utils.py
 dist/
 estegano.egg-info/
+deb_dist/

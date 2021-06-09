@@ -1,4 +1,3 @@
-import os
 from setuptools import setup, find_packages
 
 setup(
@@ -17,5 +16,6 @@ setup(
 		"Development Status :: 3 - Alpha",
 		"License :: OSI Approved :: BSD License",
 	],
-	install_requires=["numpy==1.20.1", "opencv-contrib-python==4.5.1.48", "opencv-python==4.5.1.48", "Pillow==8.1.2"],
+	py_modules=['estegano'],
+	install_requires=["opencv-contrib-python>=4.5.1.48", "opencv-python>=4.5.1.48", "Pillow>=8.1.2"],
 )

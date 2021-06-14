@@ -17,7 +17,8 @@ class App(tk.Tk):
 		self.resizable(False, False)
 		self.geometry('580x310')
 		self.style = ttk.Style(self)
-
+		self.photo = tk.PhotoImage(file="img/app-icon.png")
+		self.iconphoto(False, self.photo)
 		# initial variables
 		self.image_display_size = 300, 300
 		self.path_image = None
